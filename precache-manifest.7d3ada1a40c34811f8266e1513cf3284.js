@@ -36,10 +36,6 @@ self.__precacheManifest = [
     "url": "/myShop/static/media/primeicons.121254f7.ttf"
   },
   {
-    "revision": "3b6e3706f42d8876fe364ab4d75683fd",
-    "url": "/myShop/static/media/primeicons.3b6e3706.woff"
-  },
-  {
     "revision": "b0f5d02f4e70967dcc8162e938484366",
     "url": "/myShop/static/media/primeicons.b0f5d02f.eot"
   },
@@ -48,7 +44,11 @@ self.__precacheManifest = [
     "url": "/myShop/static/media/primeicons.25954ab5.svg"
   },
   {
-    "revision": "e4e4c84d4d7e3046fd414a628d165061",
+    "revision": "3b6e3706f42d8876fe364ab4d75683fd",
+    "url": "/myShop/static/media/primeicons.3b6e3706.woff"
+  },
+  {
+    "revision": "7d0a1a36c900030e1f9b5db9f46db9e0",
     "url": "/myShop/index.html"
   }
 ];
