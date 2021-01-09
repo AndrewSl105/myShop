@@ -1,11 +1,11 @@
 self.__precacheManifest = [
   {
-    "revision": "15a510f412e1dbe8b1f6",
-    "url": "/myShop/static/css/main.1b8e92f0.chunk.css"
+    "revision": "a90cfdd34ef6f5ebf462",
+    "url": "/myShop/static/css/main.a16897d7.chunk.css"
   },
   {
-    "revision": "15a510f412e1dbe8b1f6",
-    "url": "/myShop/static/js/main.15a510f4.chunk.js"
+    "revision": "a90cfdd34ef6f5ebf462",
+    "url": "/myShop/static/js/main.a90cfdd3.chunk.js"
   },
   {
     "revision": "abbdb520985ab79b78cc",
@@ -32,12 +32,12 @@ self.__precacheManifest = [
     "url": "/myShop/static/media/color.c7a33805.png"
   },
   {
-    "revision": "3b6e3706f42d8876fe364ab4d75683fd",
-    "url": "/myShop/static/media/primeicons.3b6e3706.woff"
-  },
-  {
     "revision": "121254f73060bcbb53ca13258dbd134f",
     "url": "/myShop/static/media/primeicons.121254f7.ttf"
+  },
+  {
+    "revision": "3b6e3706f42d8876fe364ab4d75683fd",
+    "url": "/myShop/static/media/primeicons.3b6e3706.woff"
   },
   {
     "revision": "b0f5d02f4e70967dcc8162e938484366",
@@ -48,7 +48,7 @@ self.__precacheManifest = [
     "url": "/myShop/static/media/primeicons.25954ab5.svg"
   },
   {
-    "revision": "0b70e162a1194eb1816c6739d55211c2",
+    "revision": "e4e4c84d4d7e3046fd414a628d165061",
     "url": "/myShop/index.html"
   }
 ];

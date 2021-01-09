@@ -1,7 +1,7 @@
 {
-  "main.css": "/myShop/static/css/main.1b8e92f0.chunk.css",
-  "main.js": "/myShop/static/js/main.15a510f4.chunk.js",
-  "main.js.map": "/myShop/static/js/main.15a510f4.chunk.js.map",
+  "main.css": "/myShop/static/css/main.a16897d7.chunk.css",
+  "main.js": "/myShop/static/js/main.a90cfdd3.chunk.js",
+  "main.js.map": "/myShop/static/js/main.a90cfdd3.chunk.js.map",
   "static/css/1.01858104.chunk.css": "/myShop/static/css/1.01858104.chunk.css",
   "static/js/1.abbdb520.chunk.js": "/myShop/static/js/1.abbdb520.chunk.js",
   "static/js/1.abbdb520.chunk.js.map": "/myShop/static/js/1.abbdb520.chunk.js.map",
@@ -11,9 +11,9 @@
   "static/media/cart.svg": "/myShop/static/media/cart.62265274.svg",
   "static/media/primereact.min.css": "/myShop/static/media/color.c7a33805.png",
   "static/media/primeicons.css": "/myShop/static/media/primeicons.25954ab5.svg",
-  "static/css/main.1b8e92f0.chunk.css.map": "/myShop/static/css/main.1b8e92f0.chunk.css.map",
+  "static/css/main.a16897d7.chunk.css.map": "/myShop/static/css/main.a16897d7.chunk.css.map",
   "static/css/1.01858104.chunk.css.map": "/myShop/static/css/1.01858104.chunk.css.map",
   "index.html": "/myShop/index.html",
-  "precache-manifest.7595d159268fadbbed47408522b4c019.js": "/myShop/precache-manifest.7595d159268fadbbed47408522b4c019.js",
+  "precache-manifest.2a6ccc12551323c6321befa335df130f.js": "/myShop/precache-manifest.2a6ccc12551323c6321befa335df130f.js",
   "service-worker.js": "/myShop/service-worker.js"
 }
