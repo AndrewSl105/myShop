@@ -5,7 +5,7 @@ import { Button } from 'primereact/button';
 
 const LogInForm = () => {
     return (
-        <form>
+        <form className='log-in'>
             <InputText placeholder='log-in'  />
             <InputText placeholder='e-mail'   />
             <InputText placeholder='password'  />

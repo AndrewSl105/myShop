@@ -7,15 +7,15 @@ import ProductDetailsItem from '../product-deatils-item/productDetailsItem'
 import "./productDetailsCont.sass"
 
 const productQuery = gql`
-query product($Id: ID!) {
-    product(id: $Id) {
-        name
-        description
-        image
-        quantity
-        price
+    query product($Id: ID!) {
+        product(id: $Id) {
+            name
+            description
+            image
+            quantity
+            price
+        }
     }
-}
 `;
 
 const productDetailsCont = () => {
