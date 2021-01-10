@@ -18,7 +18,7 @@ const ProductList =(props) => {
 
     const [pageArgs, setPageArgs] = useState({
         currentPage: 1,
-        perPage: 8
+        perPage: 10
     });
 
     const onPrev = () => {

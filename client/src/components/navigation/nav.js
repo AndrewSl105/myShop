@@ -2,11 +2,14 @@ import React from 'react'
 import './nav.sass';
 import logo from '../images/logo.png'
 import cart from '../images/cart.svg'
+import {useLocation} from "react-router-dom";
 import {
     Link
 } from "react-router-dom";
 
 const Nav = () => {
+    const search = useLocation().search;
+    const Id = new URLSearchParams(search).get('id');
     return (
         <div className='nav-cont'>
             <div className='logo-cont'>
