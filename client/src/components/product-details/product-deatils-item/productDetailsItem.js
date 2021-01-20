@@ -1,6 +1,6 @@
 import React from 'react'
 import './productDetailsItem.sass'
-
+import Examole from '../../../components/example'
 const ProductDetailsItem = props => {
     const product = props.product
 
@@ -24,6 +24,7 @@ const ProductDetailsItem = props => {
                         {product.quantity}
                     </p>
                 </div>
+                <Examole />
             </div>
         </div>
     )
