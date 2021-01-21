@@ -1,15 +1,23 @@
 import React, { useState }  from 'react';
 import { RadioButton } from 'primereact/radiobutton';
 import './adminTheeming.sass';
+import { connect } from 'react-redux';
+import {upgrateNavStyles} from '../../../../redux/actions'
 
 
-
-const AdminTheeming = () => {
-
-
+const AdminTheeming = (props) => {
     const [navStyle, setNavStyle] = useState(null);
 
-    console.log(navStyle)
+    
+
+    console.log(props.styles)
+
+   
+
+    const changeStyles = () => {
+        
+    }
+    
     return (
         <div className='theeme-container'>
             <div className='theeme'>
@@ -33,9 +41,22 @@ const AdminTheeming = () => {
                     />
                     <label htmlFor="city2">Vertical</label>
                 </div>
+                <button onClick={changeStyles} >
+                    Add styles
+                </button>
             </div>
         </div>
     )
 }
 
-export default AdminTheeming;
+const mapStateToPropsTotal = (state) => {
+    let styleResult = Object.values(state.styles).flat(1)
+
+    console.log(styleResult)
+
+    return {
+        styles: styleResult
+    };
+};
+
+export default connect(mapStateToPropsTotal, null)(AdminTheeming);

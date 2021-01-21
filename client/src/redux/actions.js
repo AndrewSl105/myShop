@@ -1,12 +1,21 @@
-/*import {
-  ADD_PRODUCT_TO_CART,
-  REMOVE_PRODUCT_FROM_CART,
-  INCREMENT_CART_ITEM_QUANTITY,
-  DECREMENT_CART_ITEM_QUANTITY,
-  ADD_FAVOURITES,
-  REMOVE_PRODUCT_FROM_FAV,
+import {
+  UPGRATE_NAV_STYLES 
 } from './types';
 
+
+
+export const  upgrateNavStyles = (horizontalStyles) => {
+  return {
+    type: UPGRATE_NAV_STYLES ,
+    payload: horizontalStyles,
+  };
+};
+
+
+
+
+
+/*
 export const addProductToCart = (product) => {
   return {
     type: ADD_PRODUCT_TO_CART,
