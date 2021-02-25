@@ -28,6 +28,11 @@ const DashboardSidebar = () => {
                             Products
                         </Link>
                     </li>
+                    <li>
+                        <Link to={`${url}/admTheeming`} >
+                            Theeming
+                        </Link>
+                    </li>
                 </ul>
             </Sidebar>
             <Button className='side-btn' onClick={(e) => setVisibility(true)}>
@@ -37,6 +42,6 @@ const DashboardSidebar = () => {
     )
 }
 
-export default DashboardSidebar
+export default DashboardSidebar;
 
 

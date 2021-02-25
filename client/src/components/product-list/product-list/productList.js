@@ -12,6 +12,7 @@ const ProductList =(props) => {
     const { data = {} } = props;
     const { products = [] } = data;
 
+
     if (!products.length) {
         return <ProgressSpinner />
     }
