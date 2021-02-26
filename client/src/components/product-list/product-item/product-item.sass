@@ -3,10 +3,13 @@
     flex-flow: column
     align-items: center
     margin: 1rem
-    padding: .5rem
-    //border-radius: 2px
-    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.3)
-    transition: box-shadow 150ms
+    padding: .3rem
+    border-radius: 8px
+    background: #fff
+    box-shadow: 6px 6px 12px 0px rgba(185,188,193,1), -6px -6px 12px 0px #ffffff
+    border: 1px solid rgba(51,51,51,.1)
+    box-sizing: border-box
+    transition: all .25s ease
     a
         text-decoration: none
         display: flex
@@ -14,7 +17,8 @@
         justify-content: space-between
         height: 100%
     &:hover
-        box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.3)
+        transform: scale(1.03)
+        box-shadow: 12px 12px 12px 0px rgba(185,188,193,1), -12px -12px 12px 0px #ffffff
         //transform: scale(1.05)
     .product-img
         img
@@ -25,8 +29,9 @@
 
 .product-decription
     h2
-        font-size: 1.2rem
-        font-family: 'Ubuntu', sans-serif
+        font-size: 1rem
+        font-weight: bold
+        font-family: 'Robotto', sans-serif
         font-weight: 300
         color: #272727
         text-align: center

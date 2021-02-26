@@ -1,16 +1,9 @@
-//import { RECEIVE_API_DATA } from './actions';
+import { RECEIVE_API_DATA } from './actions';
 
-const initialState = {
-  styles: 
-    {
-      width: "30px",
-      height: "40px"
-    }
-  
-}
-
-export default (state = initialState, { type, data }) => {
+export default (state = [], { type, data }) => {
   switch (type) {
+    case RECEIVE_API_DATA:
+      return data;
     default:
       return state;
   }

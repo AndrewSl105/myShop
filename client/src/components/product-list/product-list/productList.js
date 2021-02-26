@@ -1,69 +1,92 @@
-import React, { useState, useEffect }  from 'react'
-import withHocs from './productListHoc'
+import React from 'react';
+//import ProdItem from '../components/prodItem';
+import { connect } from 'react-redux';
+import Pagination from '../../pagination/pagination';
+import { paginationPipe } from '../../pagination-pipe/paginationPipe';
+import { requestApiData } from '../../../redux/actions';
+import { bindActionCreators } from 'redux';
+//import { orderByFilter } from '../components/orderByFilter';
+///import AsideFilters from '../components/asideFilters';
 import ProductItem from '../product-item/productItem'
 import './product-list.sass'
-import {paginationPipe} from '../../pagination-pipe/paginationPipe'
-import Pagination from '../../pagination/pagination'
-import { ProgressBar } from 'primereact/progressbar'
-import { ProgressSpinner } from 'primereact/progressspinner';
+import spin from '../../images/spin.svg'
+class ProductList extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      products: [],
+      currentPage: 1,
+      perPage: 8,
+    };
+  }
 
+  componentDidMount() {
+    this.props.requestApiData();
+  }
 
-const ProductList =(props) => {
-    const { data = {} } = props;
-    const { products = [] } = data;
+  onPrev = () => {
+    const updatedState = { ...this.state };
+    updatedState.currentPage = this.state.currentPage - 1;
+    this.setState(updatedState);
+  };
 
-
-    if (!products.length) {
-        return <ProgressSpinner />
-    }
-
-    const [pageArgs, setPageArgs] = useState({
-        currentPage: 1,
-        perPage: 10
+  onNext = () => {
+    this.setState({
+      ...this.state,
+      currentPage: this.state.currentPage + 1,
     });
+  };
 
-    const onPrev = () => {
-        const updatedState = { ...pageArgs }
-        updatedState.currentPage = pageArgs.currentPage - 1
-        setPageArgs(updatedState)
-    };
-    
-    const onNext = () => {
-        setPageArgs({
-        ...pageArgs,
-        currentPage: pageArgs.currentPage+1
-        })
-    };
+  goPage = (n) => {
+    this.setState({
+      ...this.state,
+      currentPage: n,
+    });
+  };
 
-    const goPage = (n) => {
-        setPageArgs({
-          ...pageArgs,
-          currentPage: n,
-        });
-    };
-
+  render() {
+    let products = this.props.products;
+    if (!products.length) {
+      return <img src={spin} style={{width: "200px"}} />
+    }
+    console.log(products)
     return (
-        <div className='product-list-cont'>
-         
-            <div className='product-list'>
-                {
-                    paginationPipe(products, pageArgs).map (product => {
-                        return <ProductItem key={product.id} product={product}  />
-                    })
-                }
-            </div>
-            <Pagination                 
-                totalItemsCount={products.length}
-                currentPage={pageArgs.currentPage}
-                perPage={pageArgs.perPage}
-                pagesToShow={8}
-                onGoPage={goPage}
-                onPrevPage={onPrev}
-                onNextPage={onNext}>
-            </Pagination>
+        <div className="product-list-cont">
+          <div className="product-list">
+            {paginationPipe(products, this.state).map((element) => {
+              const name = element.name;
+              const price = element.price;
+              const id = element.sku;
+              const gallery = element.gallery;
+              return <ProductItem 
+                name={name}
+                price={price}
+                key={element.sku}
+                gallery={gallery}
+                id={id} />
+            })}
+          </div>
+          <Pagination
+            totalItemsCount={products.length}
+            currentPage={this.state.currentPage}
+            perPage={this.state.perPage}
+            pagesToShow={this.state.pagesToShow}
+            onGoPage={this.goPage}
+            onPrevPage={this.onPrev}
+            onNextPage={this.onNext}
+          />
         </div>
-    )
+    );
+  }
 }
 
+const mapStateToProps = (state) => {
+  return {
+    products: state.dataReducer,
+  };
+};
 
-export default withHocs(ProductList);
+const mapDispatchToProps = (dispatch) =>
+  bindActionCreators({ requestApiData }, dispatch);
+
+export default connect(mapStateToProps, mapDispatchToProps)(ProductList);

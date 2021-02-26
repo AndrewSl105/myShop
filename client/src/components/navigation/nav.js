@@ -9,25 +9,10 @@ import {
 
 const Nav = () => {
 
-
-    const horizonStyles = {
-        width: '100%',
-        height: "70px",
-        minHeight: 'initial',
-        flexFlow: "row"
-    }
-
-    const verticalStyles = {
-        width: "100px",
-        minHeight: "100vh",
-        flexFlow: "column"
-    }
-
-
     const search = useLocation().search;
     const Id = new URLSearchParams(search).get('id');
     return (
-        <div className='nav-cont' style={verticalStyles}>
+        <div className='nav-cont' >
             <div className='logo-cont'>
                 <Link to="/">
                     <img src={logo} alt='logo fashion hub' />
@@ -36,9 +21,11 @@ const Nav = () => {
                     </h1>
                 </Link>
             </div>
-            <div className='cart-cont'>
-                    <img src={cart} alt='logo fashion hub' />
+            {/*
+                        <div className='cart-cont'>
+                <img src={cart} alt='logo fashion hub' />
             </div>
+            */ }
             <div className='nav-left-cont'>
                 <ul className='nav-items-list'>
                     <Link to="/auth">

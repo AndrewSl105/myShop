@@ -1,15 +1,22 @@
 .nav-cont
-    width: 100px
+    width: 100%
     display: flex
-    flex-flow: column
+    justify-content: flex-end
+    //flex-flow: column
     position: relative
-    min-height: 100vh
+    //min-height: 100vh
+    height: 70px
+    //background: #5270bb9f
+    background: #313f61
+    //box-shadow:  10px 10px 30px #bebebe, -10px -10px 30px #ffffff
+    //border-right: 1px solid rgba(51,51,51,.1)
+    //box-shadow:  20px 20px 30px #d3e1f7, -20px -20px 30px #ffffff
     //height: 100%
     ///justify-content: space-between
     //align-items: center
     //background: #8b0f1a99
-    background: radial-gradient(circle, #70396cd7 0%, #680b1399 100%)
-    //background: radial-gradient(circle, #b7bee2 0%, #ace4de 100%)
+    //background: radial-gradient(circle, #2e427586 0%, #1e397e86 100%)
+    //background: radial-gradient(circle, #a6c1ebbe 0%, #c7d8e4a6 100%)
     //background-color: #283847
     @media screen and (max-width: 480px) 
         display: none
@@ -17,19 +24,22 @@
 .nav-left-cont
     display: flex
     justify-content: space-between
-    align-items: flex-start
-    flex-flow: column
-    text-align: left
-    margin-top: 1rem
+    align-items: center
+    //flex-flow: column
+    //text-align: left
+    //margin-top: 1rem
     a 
-        color: #ffffff
+        color: #f3f3f3
         text-decoration: none
 .logo-cont 
+    position: absolute
+    transform:  translate(-50%, -50%)
+    left: 10%
+    top: 50%
     display: flex
-    flex-flow: column
+    //flex-flow: column
     cursor: pointer
     a   
-        margin-top: 1rem
         color: inherit
         text-decoration: none
         display: flex
@@ -43,7 +53,7 @@
         margin-left: .5rem
     img
         display: block
-        max-width: 28px
+        max-width: 60px
 
 .cart-cont
     display: flex
@@ -61,7 +71,9 @@
     justify-content: space-between
     align-items: flex-start
     margin: .5rem
-    flex-flow: column
+    //flex-flow: column
     padding: 0
     a 
         padding: .5rem
+        text-transform: uppercase
+        //font-weight: bold

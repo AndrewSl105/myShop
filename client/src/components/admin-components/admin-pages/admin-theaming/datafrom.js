@@ -12,7 +12,7 @@ function DataFrom() {
     // this useEffect will run once
     // similar to componentDidMount()
     useEffect(() => {
-      fetch("")
+      fetch("https://msdrop.com.ua/export/RWwn/json")
         .then(res => res.json())
         .then(
           (result) => {
@@ -30,6 +30,7 @@ function DataFrom() {
           }
         )
     }, [])
+    console.log(items)
   
     if (error) {
       return <div>Error: {error.message}</div>;
@@ -38,9 +39,17 @@ function DataFrom() {
     } else {
       return (
         <ul>
-          {items.map(item => (
-            <img src={item.thumbnailUrl} />
-          ))}
+          {items.map(item => {
+              return <div>
+                <h1>
+                  {item.name}
+                </h1>
+                <p>
+                  {item.price}
+                </p>
+              </div>
+            }
+          )}
         </ul>
       );
     }

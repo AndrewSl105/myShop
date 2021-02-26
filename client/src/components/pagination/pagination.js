@@ -71,12 +71,14 @@ const  Pagination = props => {
       return (
         <li
           key={pageNum}
-          className={buttonClass}
+          className='page-item'
           onClick={() => {
             onPage(pageNum);
           }}
         >
-          <Button className="p-button-outlined p-button-danger">{pageNum}</Button>
+          <a>
+            {pageNum}
+          </a>
         </li>
       );
     });
@@ -88,12 +90,8 @@ const  Pagination = props => {
     }
 
     const prevButton = (
-      <li className={prevButtonClass}>
-        <Button
-          className="p-button-outlined p-button-danger"
-          onClick={onPrev} tabIndex="-1">
-          Previous
-        </Button>
+      <li onClick={onPrev} tabIndex="-1" className={prevButtonClass}>
+        Prev
       </li>
     );
 
@@ -104,13 +102,8 @@ const  Pagination = props => {
     }
 
     const nextButton = (
-      <li className={nextButtonClass}>
-        <Button
-          disabled={isOnLastPage()}
-          onClick={onNext}
-          className="p-button-outlined p-button-danger">
-          Next
-        </Button>
+      <li onClick={onNext} className={nextButtonClass}>
+        Next
       </li>
     );
 

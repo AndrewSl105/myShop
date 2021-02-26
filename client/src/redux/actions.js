@@ -1,21 +1,12 @@
 import {
-  UPGRATE_NAV_STYLES 
+  ADD_PRODUCT_TO_CART,
+  REMOVE_PRODUCT_FROM_CART,
+  INCREMENT_CART_ITEM_QUANTITY,
+  DECREMENT_CART_ITEM_QUANTITY,
+  ADD_FAVOURITES,
+  REMOVE_PRODUCT_FROM_FAV,
 } from './types';
 
-
-
-export const  upgrateNavStyles = (horizontalStyles) => {
-  return {
-    type: UPGRATE_NAV_STYLES ,
-    payload: horizontalStyles,
-  };
-};
-
-
-
-
-
-/*
 export const addProductToCart = (product) => {
   return {
     type: ADD_PRODUCT_TO_CART,
@@ -59,7 +50,7 @@ export const decrementCartQuantity = (productId) => {
 };
 export const ADD_CITY_TO_FILTER = 'ADD_CITY_TO_FILTER';
 export const REMOVE_CITY_FROM_FILTER = 'REMOVE_CITY_FROM_FILTER';
-
+/*
 export const addCityToFilter = (brand) => {
   return {
     type: ADD_BRAND_TO_FILTER,
@@ -72,7 +63,7 @@ export const removeCityFromFilter = (brand) => {
     type: REMOVE_BRAND_FROM_FILTER,
     brand,
   };
-};
+};*/
 export const REQUEST_API_DATA = 'REQUEST_API_DATA';
 export const RECEIVE_API_DATA = 'RECEIVE_API_DATA';
 
@@ -99,4 +90,4 @@ export const clearOrderBy = () => {
   return {
     type: CLEAR_ORDER_BY_PRICE,
   };
-};*/
+};

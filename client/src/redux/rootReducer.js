@@ -1,11 +1,12 @@
 import { combineReducers } from 'redux';
 import dataReducer from './dataReducer';
-import navStylesReducer from './theeming/navStylesReducer'
-
+import cartReducer from './cartReducer';
+import wishListReducer from './wishListReducer';
+import { orderByPriceReducer } from './orderByPrice.filter.reducer';
 
 export const rootReducer = combineReducers({
-  //orderBy: orderByPriceReducer,
-  //cart: cartReducer,
-  //wishlist: wishListReducer,
-  styles: navStylesReducer 
+  orderBy: orderByPriceReducer,
+  cart: cartReducer,
+  wishlist: wishListReducer,
+  dataReducer,
 });
