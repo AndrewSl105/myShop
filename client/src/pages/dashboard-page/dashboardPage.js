@@ -9,8 +9,6 @@ const DashboardPage = () => {
 
     return (
         <div className='dashbord-main-cont'>
-            <DashboardSidebar/>
-            <AdminMain />
         </div>
     )
 }

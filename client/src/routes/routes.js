@@ -8,6 +8,7 @@ import AdminMain from '../components/admin-components/admin-pages/admin-main/adm
 import AdminProductList from '../components/admin-components/admin-pages/admin-products-list/adminProductList'
 import AdminTheeming from '../components/admin-components/admin-pages/admin-theaming/adminTheeming'
 import DashboardSidebar from '../components/admin-components/dashboard-sidebar/dashboardSidebar'
+import DashboardPage from '../pages/dashboard-page/dashboardPage'
 
 
 
@@ -20,12 +21,12 @@ export default function Routes() {
         <Route
           path="/dashboard"
           render={({ match: { url } }) => (
-            <>
+            <Route component={DashboardPage}>
               <DashboardSidebar />
               <Route path={`${url}/`} component={AdminMain} exact />
               <Route path={`${url}/dashProducts`} component={AdminProductList} />
               <Route path={`${url}/admTheeming`} component={AdminTheeming} />
-            </>
+            </Route>
           )}
         />
       <Route path="/catalog" component={CatalogPage} />  
