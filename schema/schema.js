@@ -1,8 +1,12 @@
 const graphql = require('graphql');
-const { GraphQLObjectType, GraphQLString, GraphQLSchema, GraphQLID, GraphQLInt, GraphQLList, GraphQLNonNull, GraphQLBoolean } = graphql;
+const { GraphQLObjectType, GraphQLString, GraphQLSchema, GraphQLID, GraphQLInt, GraphQLList, GraphQLNonNull, GraphQLBoolean, GraphQLArray } = graphql;
 const Products = require('../models/product');
+const productsFromDrop = require('../models/productDrop');
 
-const ProductType = new GraphQLObjectType({
+
+
+
+const RootProductType = new GraphQLObjectType({
 	name: 'Product',
 	fields: () => ({
 	  id: { type: GraphQLID },
@@ -13,13 +17,37 @@ const ProductType = new GraphQLObjectType({
 	  size: { type: new GraphQLNonNull(GraphQLString) },
 	  price: { type: new GraphQLNonNull(GraphQLInt) },
 	}),
-  });
+});
+
+
+const ProductDrop = new GraphQLObjectType({
+	name: 'ProductDrop',
+	fields: () => ({
+	  id: { type: GraphQLID },
+	  sku: { type: new GraphQLNonNull(GraphQLString) },
+	  name: { type: new GraphQLNonNull(GraphQLString) },
+	  price: { type: new GraphQLNonNull(GraphQLInt) },
+	  category: { type: new GraphQLNonNull(GraphQLString) },
+	  vendor: { type: GraphQLString },
+	  model: { type: GraphQLString },
+	  gallery: {type:  GraphQLArray,
+		resolve: (el) => {}
+	  },
+	  color: { type: GraphQLString },
+	  weight: { type: GraphQLString},
+	  country: { type: GraphQLString },
+	  sizes: { type: GraphQLArray },
+	}),
+});
+
+
+
 
 const Mutation = new GraphQLObjectType({
 	name: 'Mutation',
 	fields: {
 		addProduct: {
-			type: ProductType,
+			type: RootProductType,
 			args: {
 				name: { type: new GraphQLNonNull(GraphQLString) },
 				description: { type: new GraphQLNonNull(GraphQLString) },
@@ -41,31 +69,42 @@ const Mutation = new GraphQLObjectType({
 			},
 		},
 		deleteProduct: {
-			type: ProductType,
+			type: RootProductType,
 			args: { id: { type: GraphQLID } },
 			resolve(parent, { id }) {
 				return Products.findByIdAndRemove(id);
 			}
 		},
-	}
+	},
+	name: "MutationForDrop"
 });
 
 const Query = new GraphQLObjectType({
 	name: 'Query',
 	fields: {
 		product: {
-			type: ProductType,
+			type: RootProductType,
 			args: { id: { type: GraphQLID } },
 			resolve(parent, { id }) {
 				return Products.findById(id);
 			},
 		},
 		products: {
-			type: new GraphQLList(ProductType),
+			type: new GraphQLList(RootProductType),
 			//args: { name: { type: GraphQLString } },
 			resolve(parent, args) {
 				return Products.find({});
 			}
+		},
+	},
+	name: "dropQuery",
+	fields: {
+		productDrop: {
+			type: ProductDrop,
+			args: { id: { type: GraphQLID } },
+			resolve() {
+				return productsFromDrop.find({});
+			},
 		},
 	}
 });

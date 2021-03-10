@@ -9,7 +9,7 @@ import { bindActionCreators } from 'redux';
 ///import AsideFilters from '../components/asideFilters';
 import ProductItem from '../product-item/productItem'
 import './product-list.sass'
-import spin from '../../images/spin.svg'
+import Spiner from '../../spiner/spiner';
 class ProductList extends React.Component {
   constructor(props) {
     super(props);
@@ -47,7 +47,7 @@ class ProductList extends React.Component {
   render() {
     let products = this.props.products;
     if (!products.length) {
-      return <img src={spin} style={{width: "200px"}} />
+      return <Spiner />
     }
     console.log(products)
     return (

@@ -5,6 +5,7 @@ import { gql } from 'apollo-boost';
 import { ProgressBar } from 'primereact/progressbar';
 import ProductDetailsItem from '../product-deatils-item/productDetailsItem'
 import "./productDetailsCont.sass"
+import Spiner from '../../spiner/spiner';
 
 const productQuery = gql`
     query product($Id: ID!) {
@@ -25,7 +26,7 @@ const productDetailsCont = () => {
     return (
         <Query query={productQuery} variables={{ Id }}>
             {({ data }) => {
-                if (!data) return <ProgressBar mode="indeterminate" />
+                if (!data) return <Spiner />
                 const product = data.product;
                 return (
                     <div className='product-details-cont'>
