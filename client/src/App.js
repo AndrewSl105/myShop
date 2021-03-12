@@ -1,6 +1,7 @@
 import React from 'react';
 import ApolloClient from 'apollo-boost'
 import { ApolloProvider } from '@apollo/react-hooks'
+import 'bootstrap/dist/css/bootstrap.min.css'
 import Nav from './components/navigation/nav'
 import './styles/style.sass'
 import Routes from './routes/routes'

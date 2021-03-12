@@ -13,7 +13,7 @@ const ProductItem = (props) => {
     return (
         <div className='product-item-cont'>
 
-            <Link to={`/product/?id=${props.id}`}>
+            <Link to={`/product/?${props.id}`}>
                 <div className='product-img'>
                    <img src={images} />
                 </div>

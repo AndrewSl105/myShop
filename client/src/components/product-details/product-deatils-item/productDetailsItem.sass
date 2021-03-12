@@ -1,24 +1,56 @@
 .product-details
     width: 100%
-    max-width: 900px
+    max-width: 1024px
+    min-height: 80vh
+    height: 80vh
     display: flex
     justify-content: center
     background-color: white
     padding: 1rem
     margin: 1rem
+    border-radius: 10px
+    box-shadow:  20px 20px 60px #bebebe, -20px -20px 60px #ffffff
 
 .product-cont
     width: 100%
     display: flex
     justify-content: space-between
+    button
+        background-color: #000
+        color: #fff
+        text-transform: uppercase
+        border: none
+        padding: 7px 15px
+        border-radius: 35px
+        font-size: 16px
+        min-width: 80px
+    .carousel-indicators
+        bottom: 1rem
+        .active 
+            background-color: #c22ba6
+        li
+            width: 20px
+            height: 20px
+            opacity: 1
+            border-radius: 50%
+            background-color: #874e8d
+    .carousel
+        height: 100% !important
+    .carousel-item
+        padding: 1rem
+        display: flex
+        justify-content: center
     .product-img
-        width: 70%
+        width: 60%
+        background: #ffffff
+        //background: linear-gradient(90deg, #b4b4b4 0%, rgba(142,142,142,1) 35%, #7c8385 100%)
         img
             display: block
-            width: 100%
-            max-width: 480px
+            width: auto !important
+            max-height: 700px
     .product-description
-        width: 30%
+        margin-left: 2rem
+        width: 40%
         display: flex
         flex-flow: column
         margin-right: 1rem

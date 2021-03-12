@@ -12,6 +12,7 @@ const initialState = {
 const cartReducer = (state = initialState, action) => {
   let updatedCart;
   let updatedItemIndex;
+  console.log(state)
 
   switch (action.type) {
     case INCREMENT_CART_ITEM_QUANTITY:
@@ -61,6 +62,7 @@ const cartReducer = (state = initialState, action) => {
 
         updatedItem.quantity++;
         updatedCart[updatedItemIndex] = updatedItem;
+        console.log(updatedCart)
       }
 
       return { ...state, cart: updatedCart };
