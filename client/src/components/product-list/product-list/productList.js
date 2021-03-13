@@ -21,8 +21,6 @@ class ProductList extends React.Component {
   }
 
 
-  
-
   componentDidMount() {
     this.props.requestApiData();
   }

@@ -4,11 +4,13 @@ import {useSpring, animated} from 'react-spring'
 
 
 const CategoryItem = () => {
-    const props = useSpring({opacity: 1, from: {opacity: 0}})
+    const styles = useSpring({opacity: 1, from: {opacity: 0}})
 
     return (
-        <animated.div style={props} className='category-item-cont'>
-            
+        <animated.div style={styles} className='category-item-cont'>
+            <div className='category-item-cont'>
+                {props.name}
+            </div>
         </animated.div>
     )
 }
